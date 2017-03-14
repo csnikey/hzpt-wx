@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<link rel="stylesheet" href="../css/symstyle.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body>
+<div class="title" id="theme">
+	<div class="title-name">眼科</div>
+  <div class="title-left" >
+      <a href ="javascript:history.go(-1)"   >
+     <img class="title-backimg" src="../images/common/back.png"/></a>
+   </div>
+<div class="title-right">
+		<a href="#"> 
+			<img class="title-homeimg" src="../images/common/home.png" /></a>
+	</div>
+</div>
+<!--无科室-->
+<!--<div class="new-list-tip  " >该科室暂时没有医生！ </div>-->
+	  	
+	    <!--医生列表-->
+		      <a href="#" class="li-doc">
+	           <div class="docdiv">
+	           			<span class="docname">毛新杰</span>
+	           			<span class="isorder">无安排</span>
+	           </div>
+	           <div class="docinfo">
+	           			时光是否说不定发神经 时光是否说不定发神经时光是否说不定发神经时光是否说不定发神经
+	           			时光是否说不定发神经时光是否说不定发神经时光是否说不定发神经时光是否说不定发神经
+	           </div>
+	           <img class="rightinfo"  src="../images/common/toright.png">
+		      </a>
+		      <a href="#" class="li-doc">
+	           <div class="docdiv">
+	           			<span class="docname">毛新杰</span>
+	           			<span class="isorder">可预约</span>
+	           </div>
+	           <div class="docinfo">
+	           			时光是否说不定发神经 时光是否说不定发神经时光是否说不定发神经时光是否说不定发神经
+	           			时光是否说不定发神经时光
+	           </div>
+	           <img class="rightinfo"  src="../images/common/toright.png">
+		      </a>
+		      <a href="#" class="li-doc">
+	           <div class="docdiv">
+	           			<span class="docname">毛新杰</span>
+	           			<span class="isorder">可预约</span>
+	           </div>
+	           <div class="docinfo">
+	           			时光是否说不定
+	           </div>
+	           <img class="rightinfo"  src="../images/common/toright.png">
+		      </a>
+
+
+<br> <br>
+
+</body>
+</html>
+	

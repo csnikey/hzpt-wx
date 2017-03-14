@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body >
+<div class="title" id="theme">
+   <div class="title-name" id="title-name">用户注册</div>
+  <div class="title-left" >
+      <a href ="javascript:history.go(-1)"   >
+     <img class="title-backimg" src="../images/common/back.png"/></a>
+   </div>
+</div>
+<div class="container self-panel-body self-margin-top">
+    <li class="facu2 facu-block" style="margin-top:0;">
+		    <input type="text" style="width: 100%;" name="username" id="username" placeholder="输入11位手机号码"/>   
+  </li>
+ <li class="facu2 facu-block" style="margin-top:0;border-top: 0;">
+		    <input type="password" style="width: 100%;" name="password" id="password" placeholder="输入密码（6-12位）"/>  
+  </li>
+   <li class="facu2 facu-block" style="margin-top:0;border-top: 0;">
+		   <input type="password" style="width: 100%;" name="password2" id="password2" placeholder="确认密码（6-12位）"/>  
+  </li>
+  <li class="facu2 facu-block" style="margin-top:0;border-top: 0;position: relative;">
+		   <input type="password" style="width: 100%;" name="passcode" id="passcode" placeholder="验证码（6位）"/>  
+           <a  id="getCode" onclick="getCode()" class="btn" style="position: absolute;background-color:#F29D2D;right:10px;top:5px;display:inline-block;padding:5px 10px;color:#fff">&nbsp;获取验证码</a>
+  </li>
+
+ 
+  <a onclick="test()" class="btn-block self-margin-top" >注册</a>
+ 
+  <br>
+  <!--提示信息存放位置-->
+<!--<label class="red" style="padding-left:20px">提示信息</label>-->
+
+</div>
+	
+	
+<script>
+$(document).ready(function() {
+	
+});
+
+function test(){
+   var username=$("#username").val().trim();
+   var password=$("#password").val().trim();
+   var password2=$("#password2").val().trim();
+   var passcode=$("#passcode").val().trim();
+  var msg="";
+  var boo=0;
+  var reg=/^\w{6,12}$/;
+  var reg3=/^\d{11}$/;
+   var reg4=/^\d{6}$/; 
+	if(!reg3.test(username)||!reg.test(password)||!reg.test(password2)||!reg4.test(passcode)){
+					malert("按照提示，输入完整正确的注册信息 ");
+					return;
+
+	}else{
+		if(password!=password2){
+		malert("两次输入的密码不一致！");
+		return;}else{
+			
+		loadPage();
+		//异步请求注册信息
+/*	$.post("./userInfo.htm?action=userRegist",{
+	username:username,
+	password:password,
+	passcode:passcode
+		
+	},function(e){
+		var re=eval('('+e+')');	
+		var code=re.code;
+		var msg=re.msg;
+		unloadPage();
+		if(code=="0"){
+			malert("注册成功！")
+			setTimeout("toLogin()",2000);
+			
+		}else{
+			malert("注册失败 ！"+msg);
+		}
+	}
+	)*/	
+		}
+	}
+		
+
+  
+
+}
+//跳转到登录界面
+function toLogin(){
+	window.location.href="./userInfo.htm?action=userLogin";
+}
+//获取验证码的操作
+function getCode(){
+	var tel=$("#username").val().trim();;
+	var reg=/^\d{11}$/;
+	if(!reg.test(tel)){
+		malert("手机格式不正确 ");
+		
+	}else{
+		//获取验证码的后台操作
+//		 loadPage();
+		/*$.post('/weixin/userInfo.htm?action=getCode',{
+			sjhm:tel
+		},
+		function(e){
+	      var re=eval('('+e+')');	
+	      var msg=re.msg;
+	      unloadPage();
+	      if(msg=="0"){
+	    	  var wait=30;
+	    	 malert("验证码发送成功！");
+	    	  $("#getCode").html("获取验证码"+wait+"秒 ");
+	    	  $("#getCode").attr("onclick","void");
+	    	  setTimeout("temp("+wait+")",1000)
+	    	  $("#getCode").css("background-color","gray");
+	      }	 else{
+	    	  malert("验证码发送失败！");
+	      }     
+		})	*/
+	} 
+}
+
+ function temp(t){
+	 if(t>=1){
+		 t--;
+		$("#getCode").html("获取验证码"+t+"秒 ");
+		setTimeout("temp("+t+")",1000)
+		 
+	 }else{
+		 $("#getCode").html("获取验证码");
+		 $("#getCode").css("background-color","#F29D2D");
+		 $("#getCode").attr("onclick","getCode()");
+		 
+	 }
+	
+	} 
+
+</script>
+	
+	</body>
+
+</html>

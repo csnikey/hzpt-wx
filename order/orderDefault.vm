@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<link rel="stylesheet" href="../css/symstyle.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body>
+<div class="title">手机挂号</div>
+<div class="container self-panel-body " style="padding-bottom:50px">
+<!-- $yydm -->
+
+<div class="panel self-margin-top " style="padding:10px;line-height:20px;">
+   <div style="line-height:30px;height:40px;border-bottom: 1px gray dashed;margin-bottom: 10px;">
+   	<span style="font-size:16px;" class="style-color">挂号须知</span>
+   <span id="showmore" status="0" style="margin-right:10px;margin-top:0px;height:25px;line-height:23px;display:inline-block;float:right;color:gray;border:1px solid #EDEDED;padding:0px 10px">
+                      <span id="showName">展开</span>
+     <img  style="width:14px;margin-top:-4px" src="../images/common/tobot.png"></span></div>
+    <div><p>1、我院实行实名制预约及挂号，请如实填写患者资料，并保证资料准确无误。
+</p>
+    <p>
+    2、请选择适合自己疾病的专科医师，如有需要可致电0571-88185666咨询。</p>
+    <p >
+   3、可预约次日至下周医师门诊，当日不能预约。</p>
+     <p >
+   4、预约成功后，请于当日预约时间之前到我院挂号窗口挂号（并告知收费人员已预约）；超过预约时间30分钟还未挂号者，预约号将自动取消。</p>
+     <p class="self-hidden more">
+   5、医师坐诊时间以挂号当日排班为准，因故临时变动来不及通知的，由分诊护士安排就诊，不便之处敬请谅解。</p>
+     <p class="self-hidden more" >
+   6、如需取消预约，可在个人中心，我的预约记录中取消预约。或者请提前致电0571-88185666取消预约。预约后未取消且未来院挂号者，或迟到半小时以上者，累计2次将被电脑系统拉入黑名单，取消三个月内预约资格。</p>
+     
+    </div>
+</div>
+
+<a href="#" class="btn-block self-margin-top "  >专家预约</a>
+
+</div>
+<script>
+$("#showmore").click(function(){
+	if($(this).attr("status")=="0"){
+		$(".more").show();
+		$(this).attr("status","1");
+		$("#showName").html("收起");
+		$(this).find("img").attr("src","../images/common/toup.png");
+	}else{
+		$(".more").hide();
+		$(this).attr("status","0");
+		$("#showName").html("展开");
+		$(this).find("img").attr("src","../images/common/tobot.png");
+	}
+	
+	
+})
+</script>
+</body>
+</html>

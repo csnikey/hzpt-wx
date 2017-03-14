@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<link rel="stylesheet" href="../css/symstyle.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body>
+<div class="title" id="theme">
+   <div class="title-name" id="title-name">完善个人信息</div>
+    <div class="title-left" >
+     <a href ="javascript:history.go(-1)"   >
+     <img class="title-backimg" src="../images/common/back.png"/></a>
+   </div>
+</div>
+<div class="container self-panel-body">
+  <div class="labelDiv">基本信息</div> 
+  <li class="facu2 facu-block" style="margin-top: 0;"; >
+		           <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		              <label class="red">*</label>
+		                <span class="gray">姓名：</span>
+		               <input type="text" class="facuinput" name="name" id="name" placeholder=""/>
+		            </div>	     
+  </li>
+   <li class="facu2 facu-block" style="margin-top:0;border-top:0">
+		        <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		              <span class="red">*</span>
+		                <span class="gray">性别：</span>
+		              <span for="male">
+		              	<span class="icon-radio-checked checkimg check-active" v="0" id='maleSpan' >&nbsp;男</span>
+		              <input name="sex" value="男" type="radio" id='male' checked="checked"/>
+		              </span>
+		              <span for="female">
+		              	<span class="icon-radio-unchecked checkimg "  v="1" id='femaleSpan'>&nbsp;女</span>
+		              <input name="sex" value="女" type="radio" id='female'/>
+		              </span>
+		           </div>     
+  </li>
+  <div class="labelDiv">挂号信息</div> 
+   <li class="facu2 facu-block" style="margin-top:0;">
+		        <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		              <span class="red">*</span>
+		                <span class="gray">身份证号：</span>
+		                <input class="facuinput"  type="text" name="idno" id="idno" placeholder=""/>
+		           </div>     
+  </li>
+  <li class="facu2 facu-block" style="margin-top:0;border-top: 0;">
+		        <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		              
+		                <span class="gray">标&nbsp;识&nbsp;号：</span>
+		                 <input class="facuinput" type="text" name="ino" id="ino" placeholder=""/>
+		               
+		           </div>     
+  </li>
+ 
+	<div class="red" style="margin-top: 5px;">挂号信息属于个人隐私，请妥善保管，防止泄露。</div>
+	<a onclick="dropLogin()" class="btn-block  self-margin-top"  >提交</a>
+ 
+  
+</div>
+</body>
+<script>
+	$(function(){
+//		性别的选择
+    $(".checkimg").click(function(){
+    	var v=$(this).attr('v');
+    	//判断选中的性别
+    	if(v=='0'){
+    		$(this).addClass('check-active');
+    		$(this).addClass('icon-radio-checked');
+    		$(this).removeClass('icon-radio-unchecked');
+    		$('#femaleSpan').removeClass('check-active');
+    		$('#femaleSpan').removeClass('icon-radio-checked');
+    		$('#femaleSpan').addClass('icon-radio-unchecked');
+    		$("#male").attr('checked',true);
+    		$("#female").attr('checked',false);
+    	}else{
+    		$(this).addClass('check-active');
+    		$("#female").attr('checked',true);
+    		$("#male").attr('checked',false);
+    		$(this).addClass('icon-radio-checked');
+    		$(this).removeClass('icon-radio-unchecked');
+    		$('#maleSpan').removeClass('check-active');
+    		$('#maleSpan').removeClass('icon-radio-checked');
+    		$('#maleSpan').addClass('icon-radio-unchecked');
+    	}
+    	
+    })
+		
+		
+		
+		
+	})
+	
+	
+	
+	
+	
+</script>
+</html>
+	

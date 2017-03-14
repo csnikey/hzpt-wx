@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<link rel="stylesheet" href="../css/symstyle.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body>
+<div class="title">
+	科室列表
+	<div class="title-left">
+		<a href="javascript:history.go(-1)"> <img class="title-backimg"
+			src="../images/common/back.png" /></a>
+	</div>
+	<div class="title-right">
+		<a href="#"> 
+			<img class="title-homeimg" src="../images/common/home.png" /></a>
+	</div>
+</div>
+
+<!--无科室-->
+<!--<div class="new-list-tip  " >暂时没有可预约科室！ </div>-->
+
+	<!--有科室-->
+	<a class="li-order" href="#"  >
+	名医门诊名医门诊名医门诊名医门诊名医门诊
+	<img class="rightinfo"  src="../images/common/toright.png">
+     </a>
+     <a class="li-order" href="#"  >
+	名医门诊
+	<img class="rightinfo"  src="../images/common/toright.png">
+     </a>
+     <a class="li-order" href="#"  >
+	名医门诊
+	<img class="rightinfo"  src="../images/common/toright.png">
+     </a>
+
+<br><br>
+
+</body>
+</html>
+

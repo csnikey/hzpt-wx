@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telphone=no"/>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/zjsyk.css"/>
+<script src="../js/layer.m.js"></script>
+<script src="../js/mlayerUtil.js"></script>
+<title>浙江省眼科医院</title>
+</head>
+<body >
+<div class="title" id="theme">
+   <div class="title-name" id="title-name">用户登录</div>
+  <div class="title-left" >
+      <a href ="javascript:history.go(-1)"   >
+     <img class="title-backimg" src="../images/common/back.png"/></a>
+   </div>
+   <div class="title-right" style="margin-top:-5px" >
+     <a  href ="#" style="font-size:18px;line-height:18px" >注册</a>
+   </div>
+ 
+</div>
+
+<form  class="self-margin self-panel-body container" style="margin-top:20px" >
+  <li class="facu2 facu-block" style="margin-top: 0;"; >
+		           <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		             
+		                <span class="gray">账号：</span>
+		               <input type="text"  name="userName" id="userName" placeholder="（注册的手机号）"/>
+		            </div>	     
+  </li>
+  <li class="facu2 facu-block" style="margin-top: 0;border-top: none;"; >
+		           <div class="self-panel-body container clear-margin" >
+		            <div class="item-l1  col-md-4 " style="width:100%;text-align:left">
+		           
+		                <span class="gray">密码：</span>
+		               <input type="password" name="password" id="password" />
+		            </div>	     
+  </li>
+
+  <a onclick="test()" class="btn-block btn-brow self-margin-top" >登录</a>
+</form>
+<br>
+<div  style="text-align:right"><a class="gray" href="javascript:getNewPass()" style="margin-right:20px">忘记密码 ?</a></div>	
+<!--用于存放提示信息的-->
+<label class="red" style="padding-left:10px;display:none" id="tip">用户名或者密码错误,登录失败！</label>	
+<script>
+function getNewPass(){
+	var userName=$("#userName").val().trim();
+	 var reg=/^1\d{10}$/;
+	 if(!reg.test(userName)||userName==''){
+	 	malert("请输入正确的手机号码 （11位）！");
+		return;	
+	 };
+	
+	mconfirm('您确认找回密码吗？点确认将发送一条新密码到您的手机',['确认','取消'],null,function(){
+		//如果点击是 将重新获取密码 后台操作
+		loadPage();
+	});
+	
+	}
+
+function test(){
+
+	var userName=$("#userName").val().trim();
+	var password=$("#password").val().trim();
+	if(""==userName||""==password){
+		malert("姓名以及密码不能为空 ！");
+		return;	
+	};
+	 var reg=/^1\d{10}$/;
+	 if(!reg.test(userName)){
+	 	malert("请输入正确的手机号码 ！");
+		return;	
+	 };
+	 if(password.length<6||password>12){
+	 	malert("请输入正确的密码（6-12位）！");
+		return;
+	 }
+	loadPage();
+	//异步请求后台调用登录
+/*	$.post("./userInfo.htm?action=userLogin",
+			{userName:userName,
+		password:password},function(e){
+			var re=eval('('+e+')');	
+			var code=re.ret_code;
+			var url = re.url;
+			//alert(url);
+			unloadPage();
+			if(code=="0"){
+				alert("登录成功！")
+				setTimeout(toUserPage(url),1000);				
+			}else{
+				var msg=re.msg;
+				$("#tip").show();
+			}
+
+	});*/
+	
+	
+}
+//跳转到拦截页面
+function toUserPage(url){
+	window.location.href = url;	
+}
+//跳转到预约界面
+function toDeptPage() {
+	var url = "./order.htm?action=orderDefault&wechat=oP0qqjoV2w9B27sOv73osS6FYNP4&yydm=47148099533068111A2101&style_color=zjzyyy&hospital_name=6K_45pqo5biC5Lit5Yy75Yy76Zmi";
+	window.location.href = url;
+}
+</script>
+
+	</body>
+	<script>
+		$(function(){
+			$('.li-order').first().css('border-bottom','none');
+		})
+	</script>
+</html>
+	
